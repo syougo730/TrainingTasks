@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.AlertDialog
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.CheckBox
+import android.widget.Toast
+import androidx.savedstate.SavedStateRegistry
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -57,5 +61,30 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 
-    fun onCheckboxClicked(view: View) {}
+    fun onCheckboxClicked(view: View) {
+        if (view is CheckBox) {
+            val checked: Boolean = view.isChecked
+            when (view.id) {
+                //1つ目のチェックボックス押下時
+                R.id.checkbox_1 -> {
+                    if (checked) {
+                        // FragmentではActivityを取得して生成
+                        AlertDialog.Builder(this)
+                        .setTitle("タイトル")
+                        .setMessage("メッセージ")
+                        .show()
+                    }
+                }
+                //2つめのチェックボックス押下時
+                R.id.checkbox_2 -> {
+                    Toast.makeText( //トースト表示
+                        this,
+                        view.isChecked.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+    }
+
 }

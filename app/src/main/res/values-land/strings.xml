@@ -2,4 +2,6 @@
 <resources>
     <string name="list2">選択肢２</string>
     <string name="list1">選択肢１</string>
+    <string name="checkbox1">選択肢１</string>
+    <string name="checkbox2">選択肢２</string>
 </resources>
