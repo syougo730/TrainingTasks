@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/container"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.myapplication.FirstFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal" />
-    <!--    <include layout="@layout/content_main" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
